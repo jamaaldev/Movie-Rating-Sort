@@ -1,0 +1,40 @@
+[
+    {
+        "title":"stranger things",
+        "rating": 5,
+        "image": "./image/strnger.jpg",
+        "disc": "When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces in order to get him back."
+
+    },
+    {
+        "title":"Cobra kai",
+        "rating": 2,
+        "image": "./image/cobra.jpg",
+        "disc": "Decades after their 1984 All Valley Karate Tournament bout, a middle-aged Daniel LaRusso and Johnny Lawrence find themselves martial-arts rivals again."
+    },
+    {
+        "title":"queens Gambit",
+        "rating": 5,
+        "image": "./image/queens.jpg",
+        "disc": "Orphaned at the tender age of nine, prodigious introvert Beth Harmon discovers and masters the game of chess in 1960s USA. But child stardom comes at a price."
+    },
+    {
+        "title":"Locke & Key",
+        "rating": 4,
+        "image": "./image/locke.jpg",
+        "disc": "After their father is murdered under mysterious circumstances, the three Locke siblings and their mother move into their ancestral home, Keyhouse, which they discover is full of magical keys that may be connected to their father's death."
+    },
+    {
+        "title":"Big Mouth",
+        "rating": 3,
+        "image": "./image/big.jpg",
+        "disc": "Teenage friends find their lives upended by the wonders and horrors of puberty."
+    },
+    {
+        "title":"Glee",
+        "rating": 2,
+        "image": "./image/glee.jpg",
+        "disc": "A group of ambitious misfits try to escape the harsh realities of high school by joining a glee club headed by a passionate Spanish teacher."
+
+    }
+]

@@ -1,6 +1,6 @@
 [
     {
-        "title":"stranger things",
+        "title":"Stranger things",
         "rating": 5,
         "image": "./image/strnger.jpg",
         "disc": "When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces in order to get him back."
@@ -13,7 +13,7 @@
         "disc": "Decades after their 1984 All Valley Karate Tournament bout, a middle-aged Daniel LaRusso and Johnny Lawrence find themselves martial-arts rivals again."
     },
     {
-        "title":"queens Gambit",
+        "title":"Queens Gambit",
         "rating": 5,
         "image": "./image/queens.jpg",
         "disc": "Orphaned at the tender age of nine, prodigious introvert Beth Harmon discovers and masters the game of chess in 1960s USA. But child stardom comes at a price."

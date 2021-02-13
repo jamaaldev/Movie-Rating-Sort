@@ -150,3 +150,7 @@ body {
 .checked{
     color: rgb(42, 211, 241);
 }
+
+.Hide{
+    display: none;
+}

@@ -8,7 +8,7 @@ window.onload = () =>{
     
 }
 // Get the Movies From Data JSon
-function GetTheMovies(rate){
+function GetTheMovies(){
 fetch(dataMovies,{
     method: 'GET',
 }).then((data) =>{
@@ -19,16 +19,24 @@ fetch(dataMovies,{
 
 };
 
+function SortByRate(DomMovies){
+DomMovies.filter((Movie)=> {
+    let rat = Movie.children[1].children[0].children[2].children[0].children[0].getAttribute("data-rating");
+    if(rat < 3){
+        Movie.classList.add('Hide');
+    }
 
+})
+};
 
-function sortDom(DomMovies){
+function sortDomStar(DomMovies){
     
     let movRat;
     let spanStar;
     let Domanet;
     
     for(mov in DomMovies){
-          
+        
         for(let j = 0; j < mov.length; j++){
             // mov is the length of the Movie in the DOM
             Domanet = DomMovies[mov].children[1].children[0].children[2].children[0];
@@ -38,6 +46,7 @@ function sortDom(DomMovies){
                 spanStar[i].className = 'fa fa-star checked'
             }
         }
+        SortByRate(DomMovies,movRat);
     }
            
 }
@@ -86,8 +95,7 @@ main.innerHTML += html;
 // Collect All the Movies Listed in DOM
 let ratingDom = document.getElementsByClassName('container_movies')
 let row = Array.from(ratingDom)
-sortDom(row);
-
+sortDomStar(row);
 };
 
 

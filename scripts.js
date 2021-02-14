@@ -2,9 +2,9 @@ let main = document.querySelector('.main');
 let rate = document.querySelector('.rating');
 let inputed = document.getElementById('inputRated');
 let dataMovies = './Movie.json'
-window.onload = () =>{
+window.onload = () => {
     GetTheMovies();
-    
+
 }
 // Eventslistiner
 
@@ -13,62 +13,63 @@ window.onload = () =>{
 
 // Functions 
 // Get the Movies From Data JSon
-function GetTheMovies(){
-    fetch(dataMovies,{
+function GetTheMovies() {
+    fetch(dataMovies, {
         method: 'GET',
-    }).then((data) =>{
+    }).then((data) => {
         return data.json();
-    }).then((movies)=> {
+    }).then((movies) => {
         ShowMovies(movies);
     })
-    
+
 };
 
 
 // here is the input value
-function SortByRate(DomMovies){
-    
-    DomMovies.filter((Movie)=> {
-        let rat =+ Movie.children[1].children[0].children[2].children[0].children[0].getAttribute("data-rating");
-        let miniRate =  Movie.parentElement.children[0].children[0].children[0];
+function SortByRate(DomMovies) {
+
+    DomMovies.filter((Movie) => {
+        let rat = +Movie.children[1].children[0].children[2].children[0].children[0].getAttribute("data-rating");
+        let miniRate = Movie.parentElement.children[0].children[0].children[0];
         getMyRate(rat)
-        function getMyRate(rat){
-           miniRate.addEventListener('input', function(e){
-            pleaseRate(rat,e.target.value,e.target.value)
-        })
+
+        function getMyRate(rat) {
+            miniRate.addEventListener('input', function (e) {
+                pleaseRate(rat, e.target.value, e.target.value)
+            })
         }
- 
-   const pleaseRate = (rat,mini,help) => {
-        console.log('rat:',rat,'mini:',mini)
-       if(rat < mini){
-           Movie.classList.add('Hide');
-       } else{
-        Movie.classList.remove('Hide');
-       }
-      if(mini > 5  || mini == '0' ){
-        let popup = document.querySelector('.popup');
-          popup.classList.add('Show')
-      } else{
-        let popup = document.querySelector('.popup');
-        popup.classList.remove('Show')
-      }
-   }
+
+        const pleaseRate = (rat, mini, help) => {
+            console.log('rat:', rat, 'mini:', mini)
+            if (rat < mini) {
+                Movie.classList.add('Hide');
+            } else {
+                Movie.classList.remove('Hide');
+            }
+            if (mini > 5 || mini == '0') {
+                let popup = document.querySelector('.popup');
+                popup.classList.add('Show')
+            } else {
+                let popup = document.querySelector('.popup');
+                popup.classList.remove('Show')
+            }
+        }
     })
 };
-        
-function sortDomStar(DomMovies){
-    
+
+function sortDomStar(DomMovies) {
+
     let movRat;
     let spanStar;
     let Domanet;
-    
-    for(mov in DomMovies){
-        
-        for(let j = 0; j < mov.length; j++){
+
+    for (mov in DomMovies) {
+
+        for (let j = 0; j < mov.length; j++) {
             // mov is the length of the Movie in the DOM
             Domanet = DomMovies[mov].children[1].children[0].children[2].children[0];
             movRat = Domanet.children[0].getAttribute("data-rating");
-            for(let i = j; i < movRat; i++){
+            for (let i = j; i < movRat; i++) {
                 spanStar = Domanet.getElementsByTagName('span');
                 spanStar[i].className = 'fa fa-star checked'
             }
@@ -76,16 +77,16 @@ function sortDomStar(DomMovies){
         // console.log(DomMovies[0].parentElement)
         SortByRate(DomMovies);
     }
-    
+
 }
 
-function ShowMovies(movies){
-    
+function ShowMovies(movies) {
+
     let html;
-    for(movie of movies){
-        
-        
-        
+    for (movie of movies) {
+
+
+
         html = ` <div class="container_movies">
         
         <div class="movies_img">
@@ -114,16 +115,14 @@ function ShowMovies(movies){
         </div>
         </div>
         `
-        
+
         ;
         main.innerHTML += html;
-        
-        
+
+
     }
     // Collect All the Movies Listed in DOM
     let ratingDom = document.getElementsByClassName('container_movies')
     let row = Array.from(ratingDom)
     sortDomStar(row);
 };
-
-

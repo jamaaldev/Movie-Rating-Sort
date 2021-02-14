@@ -1,13 +1,13 @@
 [
     {
-        "title":"Stranger things",
+        "title":"Stranger Things",
         "rating": 5,
         "image": "./image/strnger.jpg",
         "disc": "When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces in order to get him back."
 
     },
     {
-        "title":"Cobra kai",
+        "title":"Cobra Kai",
         "rating": 2,
         "image": "./image/cobra.jpg",
         "disc": "Decades after their 1984 All Valley Karate Tournament bout, a middle-aged Daniel LaRusso and Johnny Lawrence find themselves martial-arts rivals again."
